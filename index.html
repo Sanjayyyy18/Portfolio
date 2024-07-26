@@ -7,72 +7,15 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dTnHTIzhW2F0e6Wy7QjeKW3SJvSbJkxdIQHE6ftg2Es0EY6p7X1iCGaCiJDitqA7FStKjS3Q45YPzT8DlBdFAA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .toggle-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .toggle-label {
-            margin-right: 10px;
-        }
-
-        .toggle-switch {
-            position: relative;
-            display: inline-block;
-            width: 40px;
-            height: 20px;
-            background-color: #ccc;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .toggle-switch::before {
-            position: absolute;
-            content: "";
-            height: 16px;
-            width: 16px;
-            left: 2px;
-            bottom: 2px;
-            background-color: white;
-            border-radius: 50%;
-            transition: 0.3s;
-        }
-
-        .toggle-input {
-            display: none;
-        }
-
-        .toggle-input:checked + .toggle-switch {
-            background-color: #2196F3;
-        }
-
-        .toggle-input:checked + .toggle-switch::before {
-            transform: translateX(20px);
-        }
-
-        
-        .toggle-button {
-            padding: 8px 16px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .toggle-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    
+    
 </head>
 <body>
     <header>
         <div class="container">
-            <h1 class="logo">My Portfolio</h1>
+            <a href="#" class="logo">My Portfolio</a>
             <nav>
-                <ul>
+                <ul class="nav-list">
                     <li><a href="#about">About</a></li>
                     <li><a href="#resume">Resume</a></li>
                     <li><a href="#github">Github</a></li>
@@ -80,32 +23,32 @@
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#service">Services</a></li>
                 </ul>
+                <button class="cta-button">Get in Touch</button>
+                <div class="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
         </div>
     </header>
-
     <section id="about">
         <div class="container">
-            <h2>About Me</h2>
+            <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAPFBMVEXk5ueutLepsLPo6uursbXJzc/p6+zj5ea2u76orrKvtbi0ubzZ3N3O0dPAxcfg4uPMz9HU19i8wcPDx8qKXtGiAAAFTElEQVR4nO2d3XqzIAyAhUD916L3f6+f1m7tVvtNINFg8x5tZ32fQAIoMcsEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQTghAJD1jWtnXJPP/54IgNzZQulSmxvTH6oYXX4WS+ivhTbqBa1r26cvCdCu6i0YXbdZ0o4A1rzV+5IcE3YE+z58T45lqo7g1Aa/JY5tgoqQF3qb382x7lNzBLcxft+O17QUYfQI4IIeklKsPSN4i6LKj/7Zm8n99RbHJpEw9gEBXNBpKIYLJqKYRwjOikf//r+J8ZsVuacbqCMNleI9TqGLGqMzhnVdBOdd6F/RlrFijiCoVMk320CBIahUxTWI0KKEcJqKbMdpdJb5QvdHq6wCI5qhKlgGMS/RBHkubWDAE+QZxB4xhCyDiDkLZxgGEVdQldzSKbTIhmZkFkSEPcVvmBn2SMuZB9od7fQDsMiDdKJjFUSCQarM5WirZ3C2TT/htYnyPcPfgrFHWz0BI74gr6J/IZiGUxAZGQLqmvQLTrtE/Go4YxhVRIpEw+sww1IIcqr5NKmUUzLF3d4/qPkYIp2T/obPuemlojFUR4t9Q2Vojhb7BmgElWHzLPH8hucfpefPNFTVgs9h1AdU/Pin96vwWbWdf+X9Absn3OdO34aMdsDnP8WgKYisTqI6CkNGqZQo1XA6Ef6AU32SJzOcBukHPF07/xNSgmHKa5BOhtezv6mA/rYJpwXNAnbRZ1XuF3BzDcO3vpA3+ny2909gbqE4hhD3LIPhLLyBNhPZvbZ3B+3tPYa18A7auSlXQayKwTPNLKDcuOB0xPYKDPFTkWsevQPRZ1J8Hji9I1KQ34r7hZhrwNwOZ97QxNx0drwn4QI0wQk1DcEsfKCWKdxVvxPSNUIp/knmAXT+nT+Ko3+0H96rcNb3m1fx7MBTJdeBJ7uFcWsc0wvgAsC4pROW0l2inbAmIBv/7GZmuhQH6API2rr8T0e6yuZJ+80A9LZeG62T3tik31XwxtwZcizKuTHkMjB1WdZde4Kmic/A5ZI3rr1ae21d08PlVHYfAaxw9G9CYRbJ+8ZdbTcMRV1XM3VdF0M32vtoTdZ0+u29s0OttJ5bz64UwinjaFMVY9vkqc3KKSxN21Xl+0L4Q3Vuv1tYl0pqnX6ms4XetFz7gdZVAgUEoJntfOUe4ZwsHd9FzqQ3Vv6xe41l0XJcqcKl6TZvlv7ClAW3BsqQW4X7ypApB8dmTgK4IX5wvqIVj33HtD2qSG4BqznxdIefL27Y4sahi0MdIdvUsDva8agGGbCtITmCY31MHD2O0uIdh/0rJDQ1VX5Zdxz3rR2QDbv6qXl9vudzqQtGm1Jv9LDXOsfvvB7VcZ8PDKD0mQ1VHPYQ9O+Yj4hR1IUD8rBnn3ho2m8oQMxbCFiKlL2ioSW5heeJqegED52CzxCtcGD3Kv8Wms9EYLyUhwaFIhSMBClevWEmiK/Iaogu4H7sg6ppQhQG8RUqivuTGOAJOg6FfgW0q0M0PQMRMEgXaeNf3SYDZ8PIMI0+wHgr/MgN7wYwpiLjCCqM6ydUDZLQiB6nDdNC8SDyig3jPPpFXGcC9O8BUBDVmgBY59E7Md/35Loe/UVEECEJwYggJjELZ4J71SaQSBeC02n4Da29CayJNA28SAhd2CQyC1Xw6pSmGSINQVuMhAZp4DClan9MgmkDDNmezqwS8sgtlXK/EPBhoaSmYVC/F7IO1jQEdHOlabpKh3+jzLQSTUiq4X2I+Ip/zU8rlaqAvkS21ElR+gqu3zbjjL+hIAiCIAiCIAiCIAiCsCf/AKrfVhSbvA+DAAAAAElFTkSuQmCC" alt="Profile Picture">
+                <img src="sanjay.JPG" alt="Profile Picture" class="profile-img">
                 <div class="bio">
                     <h1>Sanjay Kumar S</h1>
                     <p>Student at SRI KRISHNA COLLEGE OF TECHNOLOGY</p>
-                    <P>Pursuing B.E.(Electronics and Communication Engineering)</P>
-                    <p></p>
-                    <br></br1>
-                    <p> I am a quick to learn and willing to adapt to any job. I am a competent, loyal, hard working employee with the ability to achieve tasks when working alone or as part of a team. 
-                        I am punctual with an excellent attendance record.I am a loyal and trustworthy employee who can work alone or as part of a team. </p>
-                    
+                    <p>Pursuing B.E. (Electronics and Communication Engineering)</p>
+                    <p>I am a quick learner and willing to adapt to any job. I am a competent, loyal, hard-working employee with the ability to achieve tasks when working alone or as part of a team. I am punctual with an excellent attendance record. I am a loyal and trustworthy employee who can work alone or as part of a team.</p>
                 </div>
             </div>
         </div>
     </section>
+    
 <br></br>
 <br></br><br></br><br></br>
-
-
     <section id="resume">
         <div class="container">
             <h2>Resume</h2>
@@ -166,8 +109,6 @@
                     <p>github profile</p>
                     <P>https://github.com/Sanjayyyy18</P>
                     <br></br1>
-                    
-                    
                 </div>
             </div>
         </div>
@@ -191,41 +132,7 @@
         </div>
     </section>
 
-    <br></br><br></br><br></br><br></br>
-    <section id="services">
-        <div class="container"></div>
-        <h1 class="headings">Services</h1>
-        <div class="row">
-            <div class="box">
-                <img src="assets/download1.jpeg" alt="Digital Marketing">
-                <h1 class="headings">Website Design</h1>
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
-                    It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
-                    Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, 
-                    and going through the cites of the word in classical literature, discovered the undoubtable source.
-                </p>
-            </div>
-            <div class="box">
-                <img src="assets/download.png" alt="Website Design">
-                <h1 class="headings">UX/UI Design</h1>
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
-                    It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
-                    Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, 
-                    and going through the cites of the word in classical literature, discovered the undoubtable source.
-                </p>
-            </div>
-            <div class="box">
-              <img src=assets\digtal.jpeg alt="UX/UI Design">
-                <h1 class="headings">Digital Marketing</h1>
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
-                    It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
-                    Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, 
-                    and going through the cites of the word in classical literature, discovered the undoubtable source.
-                </p>
-            </div>
-        </div>
-    </section>
-<br></br>
+    
     
 
     <section id="contact">
@@ -263,6 +170,7 @@
             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         </div>
         <p class="end">Copyright@</p>
+    
     </footer>
 </body>
 </html>
